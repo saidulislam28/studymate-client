@@ -35,7 +35,7 @@ const Navbar = () => {
       </li>
       <li className="mr-2 font-bold">
         <NavLink
-          to="/tourSpot"
+          to="/assignments"
           style={({ isActive }) => ({
             color: isActive ? "#fff" : "",
             background: isActive ? "" : "",
@@ -46,7 +46,7 @@ const Navbar = () => {
       </li>
       <li className="mr-2 font-bold">
         <NavLink
-          to="/addSpot"
+          to="/create"
           style={({ isActive }) => ({
             color: isActive ? "#fff" : "",
             background: isActive ? "#a881af" : "",

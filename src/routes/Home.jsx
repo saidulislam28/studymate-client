@@ -1,8 +1,13 @@
+import Faq from "../components/Faq";
+import Feature from "../components/Feature";
 
 const Home = () => {
   return (
     <div>
-      this is Home
+      <Feature></Feature>
+
+      <Faq></Faq>
+     
     </div>
   );
 };
