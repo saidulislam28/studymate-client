@@ -1,10 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./cssFiles/navbar.css";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
+
+  const { user, logOut } = useContext(AuthContext);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -70,9 +73,9 @@ const Navbar = () => {
       ) : ""} */}
     </>
   );
-  // const handleLogOut = () => {
-  //   logOut().then().catch();
-  // };
+  const handleLogOut = () => {
+    logOut().then().catch();
+  };
 
   return (
     <div className="navbar bg-base-100  container mx-auto">
@@ -111,25 +114,49 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-       
-          <div className="flex items-center">
-            {/* <div
+        {user ? (
+          <div className="flex items-center gap-2">
+            <details className="dropdown">
+              <summary className=" btn btn-ghost   btn-circle rounded-full mt-2">
+            <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost btn-circle avatar mr-4 tooltip tooltip-bottom"
-              data-tip=""
+              className="btn btn-ghost btn-circle avatar"
+              
             >
               <div className="rounded-full">
-                <img alt="" src="" />
+                <img alt={user.displayName} src={user.photoURL} />
               </div>
-            </div> */}
+            </div></summary>
+              <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box ">
+                <li className="font-semibold">
+                  <Link to="attempted">
+                  <p className="text-start">
+                    My attempted
+                  
+                  </p>
+
+                  </Link>
+                </li>
+                <div className="divider"></div>
+                <li>
+                 <button
+                 onClick={handleLogOut} className="font-semibold">Log Out</button>
+                </li>
+              </ul>
+            </details>
+
+
             {/* <div className="relative overflow-hidden  rounded-xl">
-              <button className="btn overflow-hidden relative  bg-[#98daf0] text-black rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-1/2 before:rounded-full before:bg-[#f3b200] before:top-0 before:left-1/4 before:transition-transform before:opacity-0 before:hover:opacity-100 hover:text-black hover:before:animate-ping transition-all duration-300">
+              <button
+                onClick={handleLogOut}
+                className="btn overflow-hidden relative  bg-[#98daf0] text-black rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-1/2 before:rounded-full before:bg-[#f3b200] before:top-0 before:left-1/4 before:transition-transform before:opacity-0 before:hover:opacity-100 hover:text-black hover:before:animate-ping transition-all duration-300"
+              >
                 <span className="relative">Log Out</span>
               </button>
             </div> */}
           </div>
-       
+        ) : (
           <div className="flex items-center gap-2">
             <Link to="/register">
               <p className="btn bg-[#80669d] text-white">Register</p>
@@ -139,7 +166,7 @@ const Navbar = () => {
               <p className="btn text-white  bg-[#dd7973]">Login</p>
             </Link>
           </div>
-       
+        )}
         <label className="swap swap-rotate">
           <input
             onChange={handleToggle}

@@ -1,13 +1,43 @@
 import { Link } from "react-router-dom";
 import "./styles/login.css";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
+
+const {signIN} = useContext(AuthContext)
+
+const handleSignIN = e =>{
+
+  e.preventDefault();
+
+  const form = new FormData(e.currentTarget);
+  const email = form.get("email");
+  const password = form.get("password");
+console.log(email, password);
+
+signIN(email, password)
+.then((result) =>{
+  console.log(result.user)
+  alert('successful')
+}).catch((error)=>{
+  console.log(error);
+})
+
+e.target.reset()
+
+
+}
+
+
   return (
     <div className="flex justify-center">
       <div className="login-container">
     <div className="heading">Sign In</div>
-    <form action="" className="form-section">
+    <form onSubmit={handleSignIN}  className="form-section">
       <input required="" className="input" type="email" name="email" id="email" placeholder="E-mail"/>
+
+      
       <input required="" className="input" type="password" name="password" id="password" placeholder="Password"/>
       <span className="forgot-password"><a href="#">Forgot Password ?</a></span>
       <input className="login-button" type="submit" value="Sign In"/>

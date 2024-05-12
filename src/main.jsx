@@ -11,6 +11,8 @@ import Login from './routes/authentication/Login';
 import Register from './routes/authentication/Register';
 import Assignments from './routes/Assignments';
 import CreateAssignment from './routes/CreateAssignment';
+import AuthProvider from './provider/AuthProvider';
+import MyAttempted from './routes/MyAttempted';
 
 
 
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/create",
         element: <CreateAssignment></CreateAssignment>
+      },
+      {
+        path: "/attempted",
+        element: <MyAttempted></MyAttempted>
       }
     ]
   },
@@ -45,6 +51,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+      <AuthProvider>
       <RouterProvider router={router} />
+      </AuthProvider>
   </React.StrictMode>,
 )
