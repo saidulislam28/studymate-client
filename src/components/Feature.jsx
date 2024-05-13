@@ -6,10 +6,10 @@ const Feature = () => {
     <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
       <div>
         <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-          Brand new
+          Features
         </p>
       </div>
-      <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+      <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-400 sm:text-4xl md:mx-auto">
         <span className="relative inline-block">
           <svg
             viewBox="0 0 52 24"
@@ -33,13 +33,12 @@ const Feature = () => {
               height="24"
             />
           </svg>
-          <span className="relative">The</span>
+          <span className="relative">Discover</span>
         </span>{' '}
-        quick, brown fox jumps over a lazy dog
+         the Power of StudyMate Features
       </h2>
-      <p className="text-base text-gray-700 md:text-lg">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque rem aperiam, eaque ipsa quae.
+      <p className="text-base text-gray-300 md:text-lg">
+      Explore our array of features tailored to meet your study needs and unlock your full potential.
       </p>
     </div>
     <div className="grid gap-4 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -60,10 +59,9 @@ const Feature = () => {
               />
             </svg>
           </div>
-          <h6 className="mb-2 font-semibold leading-5">The deep ocean</h6>
-          <p className="mb-3 text-sm text-gray-900">
-            A flower in my garden, a mystery in my panties. Heart attack never
-            stopped old Big Bear.
+          <h6 className="mb-2 font-semibold leading-5">Interactive Assignments</h6>
+          <p className="mb-3 text-sm text-gray-400">
+          Engage with dynamic assignments that encourage active participation and critical thinking.
           </p>
         </div>
         <a
@@ -91,10 +89,9 @@ const Feature = () => {
               />
             </svg>
           </div>
-          <h6 className="mb-2 font-semibold leading-5">When has justice</h6>
-          <p className="mb-3 text-sm text-gray-900">
-            Rough pomfret lemon shark plownose chimaera southern sandfish
-            kokanee northern sea.
+          <h6 className="mb-2 font-semibold leading-5">Assignment Submission</h6>
+          <p className="mb-3 text-sm text-gray-400">
+          Easily submit assignments online, including files and notes, with a simple and intuitive interface.
           </p>
         </div>
         <a
@@ -122,10 +119,9 @@ const Feature = () => {
               />
             </svg>
           </div>
-          <h6 className="mb-2 font-semibold leading-5">Organically grow</h6>
-          <p className="mb-3 text-sm text-gray-900">
-            A slice of heaven. O for awesome, this chocka full cuzzie is as
-            rip-off as a cracker.
+          <h6 className="mb-2 font-semibold leading-5">Mobile Compatibility</h6>
+          <p className="mb-3 text-sm text-gray-400">
+          Seamlessly access StudyMate on-the-go with our mobile-friendly platform, available on both iOS and Android devices.
           </p>
         </div>
         <a
@@ -153,10 +149,9 @@ const Feature = () => {
               />
             </svg>
           </div>
-          <h6 className="mb-2 font-semibold leading-5">A slice of heaven</h6>
-          <p className="mb-3 text-sm text-gray-900">
-            Disrupt inspire and think tank, social entrepreneur but
-            preliminary thinking think tank compelling.
+          <h6 className="mb-2 font-semibold leading-5">Customizable Study Plans</h6>
+          <p className="mb-3 text-sm text-gray-400">
+          Create personalized study plans tailored to your learning style, goals, and schedule.
           </p>
         </div>
         <a

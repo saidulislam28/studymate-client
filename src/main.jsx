@@ -13,6 +13,10 @@ import Assignments from './routes/Assignments';
 import CreateAssignment from './routes/CreateAssignment';
 import AuthProvider from './provider/AuthProvider';
 import MyAttempted from './routes/MyAttempted';
+import PendingAssignments from './routes/PendingAssignments';
+import PrivateRoutes from './MyPrivateRoutes/PrivateRoutes';
+import UpdateAssignments from './components/UpdateAssignments';
+import ViewAssignment from './components/ViewAssignment';
 
 
 
@@ -38,12 +42,32 @@ const router = createBrowserRouter([
         element: <Assignments></Assignments>
       },
       {
+        path:"/assignments/:id",
+        element:<PrivateRoutes>
+          <ViewAssignment></ViewAssignment>
+        </PrivateRoutes>,
+        loader: () => fetch('http://localhost:5000/assignments/')
+
+      },
+      {
         path: "/create",
-        element: <CreateAssignment></CreateAssignment>
+        element: <PrivateRoutes>
+          <CreateAssignment></CreateAssignment>
+        </PrivateRoutes>
       },
       {
         path: "/attempted",
         element: <MyAttempted></MyAttempted>
+      },
+      {
+        path: "/pending",
+        element: <PrivateRoutes>
+          <PendingAssignments></PendingAssignments>
+        </PrivateRoutes>
+      },
+      {
+        path: "/updateAssignments/:id",
+        element: <UpdateAssignments></UpdateAssignments>
       }
     ]
   },

@@ -1,0 +1,56 @@
+[
+  {
+    "email": "saidul@gmail.com",
+    "title": "Introduction to JavaScript",
+    "description": "Create a simple webpage with JavaScript functionality.",
+    "marks": 50,
+    "thumbnailImageUrl": "https://media.istockphoto.com/id/1047259374/photo/programming-source-code-abstract-background.jpg?s=2048x2048&w=is&k=20&c=JjAc-lnJXIFeH3Jb25ICSEseUHeGfToOleoJpiHjLGA=",
+    "difficultyLevel": "easy",
+    "dueDate": "2024-06-01"
+  },
+  {
+    "email": "saidul@gmail.com",
+    "title": "Responsive Web Design",
+    "description": "Design a responsive website layout using HTML and CSS.",
+    "marks": 100,
+    "thumbnailImageUrl": "https://media.istockphoto.com/id/1157329704/photo/flying-tablet-laptop-and-mobile-phone-showing-online-shop-website.jpg?s=2048x2048&w=is&k=20&c=JYybmDKkARebL2Dgqp5x6n4_CmoXaiHyRnCVx_-VIgk=",
+    "difficultyLevel": "medium",
+    "dueDate": "2024-06-15"
+  },
+  {
+    "email": "saidul@gmail.com",
+    "title": "Advanced Data Structures",
+    "description": "Implement various advanced data structures in a programming language of your choice.",
+    "marks": 150,
+    "thumbnailImageUrl": "https://media.istockphoto.com/id/1368237807/photo/businessman-working-modern-compter-document-management-system-virtual-online-documentation.jpg?s=2048x2048&w=is&k=20&c=zPyo8m720wOZS75AWuXMBoZs3c6_UG8w25WsIncjZ6A=",
+    "difficultyLevel": "hard",
+    "dueDate": "2024-07-01"
+  },
+  {
+    "email": "saidul@gmail.com",
+    "title": "Database Design Project",
+    "description": "Design a relational database schema for a given scenario.",
+    "marks": 80,
+    "thumbnailImageUrl": "https://media.istockphoto.com/id/1220593848/photo/thoughtful-business-man-looking-at-a-database-on-a-board.jpg?s=2048x2048&w=is&k=20&c=uO_-sYQx6NG63FY1WSU2_DcDAumN8eJ3D_3OnxUcajs=",
+    "difficultyLevel": "medium",
+    "dueDate": "2024-06-30"
+  },
+  {
+    "email": "saidul@gmail.com",
+    "title": "Mobile App Development",
+    "description": "Develop a basic mobile app using a cross-platform framework.",
+    "marks": 120,
+    "thumbnailImageUrl": "https://media.istockphoto.com/id/1488105061/photo/the-power-of-ai-transforming-industries-and-customer-service-a-look-into-the-future-yellow-ai.jpg?s=2048x2048&w=is&k=20&c=5OSE6GEkrgJvOQU1l3lhG6v_mBDZpIsNX00yl_xFu6E=",
+    "difficultyLevel": "medium",
+    "dueDate": "2024-07-10"
+  },
+  {
+    "email": "saidul@gmail.com",
+    "title": "Research Paper Presentation",
+    "description": "Prepare and present a research paper on a topic related to your field of study. Include literature review, methodology, results, and conclusion.",
+    "marks": 200,
+    "thumbnailImageUrl": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficultyLevel": "hard",
+    "dueDate": "2024-07-15"
+  }
+]

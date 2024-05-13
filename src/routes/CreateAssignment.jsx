@@ -6,30 +6,79 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const CreateAssignment = () => {
 
-  const [dueDate, setDueDate] = useState(null);
+  const [dueDates, setDueDates] = useState(null);
 
   const handleDateChange = (date) => {
-    setDueDate(date);
+    setDueDates(date);
   };
+
+
+
+  const handleSubmitAssignment = event =>{
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.elements.email.value;
+    const marks = form.elements.marks.value;
+    const title = form.elements.title.value;
+    const thumbnailImageUrl = form.elements.thumbnailImageUrl.value;
+    const description = form.elements.description.value;
+    const difficultyLevel = form.elements.difficultyLevel.value;
+    const dueDate = dueDates;
+
+    const assignmentInfo = {
+      email,
+      title, 
+      description,
+      marks,
+      thumbnailImageUrl,
+      difficultyLevel,
+      dueDate
+    }
+
+    fetch('http://localhost:5000/assignments',{
+      method: 'POST',
+      headers:{
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(assignmentInfo)
+    })
+    .then(res=> res.json())
+    .then(data =>{
+      console.log(data);
+      if(data.insertedId){
+        console.log('insert done');
+      }
+    })
+    .catch(error =>{
+      console.log(error);
+    })
+    
+
+
+
+    console.table(email,marks, title, thumbnailImageUrl, description, difficultyLevel, dueDate);
+
+
+  }
 
 
 
   return (
     <section className="p-6 bg-gray-500 dark:bg-gray-100 text-gray-50 dark:text-gray-900 container mx-auto">
       <form
-        noValidate=""
-        action=""
+      onSubmit={handleSubmitAssignment}
         className="container flex flex-col mx-auto space-y-12"
       >
-        <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-gray-400 dark:bg-gray-50">
+        <div className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-gray-400 dark:bg-gray-50">
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
             <div className="col-span-full sm:col-span-3">
               <label htmlFor="firstname" className="text-sm">
                 Email
               </label>
               <input
-                id="firstname"
-                type="text"
+                name='email'
+                type="email"
                 placeholder="Email"
                 className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
               />
@@ -39,7 +88,7 @@ const CreateAssignment = () => {
                Marks
               </label>
               <input
-                id="firstname"
+              name='marks'
                 type="text"
                 placeholder="Marks"
                 className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
@@ -50,7 +99,7 @@ const CreateAssignment = () => {
                 Assignment Title
               </label>
               <input
-                id="lastname"
+              name='title'
                 type="text"
                 placeholder="title"
                 className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
@@ -62,8 +111,8 @@ const CreateAssignment = () => {
                 Thumbnail Image URL
               </label>
               <input
-                id="email"
-                type="email"
+              name='thumbnailImageUrl'
+                type="text"
                 placeholder="URL"
                 className="p-2 w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
               />
@@ -74,7 +123,7 @@ const CreateAssignment = () => {
                 Description
               </label>
               <input
-                id="address"
+              name='description'
                 type="text"
                 placeholder="description"
                 className="p-2 w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
@@ -86,7 +135,7 @@ const CreateAssignment = () => {
               </label>
               <DatePicker
                 id="dueDate"
-                selected={dueDate}
+                selected={dueDates}
                 onChange={handleDateChange}
                 minDate={new Date()} // Set minimum date to today
                 dateFormat="yyyy-MM-dd"
@@ -99,7 +148,7 @@ const CreateAssignment = () => {
               <label htmlFor="address" className="text-sm text-white mr-4 ">
                 Difficulty level
               </label>
-              <select className='rounded-md'>
+              <select name='difficultyLevel' className='rounded-md'>
                 <option value="Easy">Easy</option>
                 <option value="Medium">Medium</option>
                 <option value="Hard">Hard</option>
@@ -109,7 +158,7 @@ const CreateAssignment = () => {
 
 
           </div>
-        </fieldset>
+        </div>
             <input className="btn text-xl" type="submit" value="Submit" />
       </form>
     </section>

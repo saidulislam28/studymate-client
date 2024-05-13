@@ -52,25 +52,26 @@ const Navbar = () => {
           to="/create"
           style={({ isActive }) => ({
             color: isActive ? "#fff" : "",
-            background: isActive ? "#a881af" : "",
+            background: isActive ? "" : "",
           })}
         >
           Create Assignments
         </NavLink>
       </li>
-      {/* {user ? (
-        <li className="font-bold">
-          <NavLink
-            to="/mylist"
-            style={({ isActive }) => ({
-              color: isActive ? "#fff" : "",
-              background: isActive ? "#a881af" : "",
-            })}
-          >
-            My List
-          </NavLink>
-        </li>
-      ) : ""} */}
+      {
+        user ? <li className="mr-2 font-bold">
+        <NavLink
+          to="/pending"
+          style={({ isActive }) => ({
+            color: isActive ? "#fff" : "",
+            background: isActive ? "" : "",
+          })}
+        >
+          Pending Assignments
+        </NavLink>
+      </li> : ""
+      }
+     
     </>
   );
   const handleLogOut = () => {
