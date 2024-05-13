@@ -11,7 +11,7 @@ const ViewAssignment = () => {
 
   const myAssignment = assignment.find((assignment) => assignment._id === id);
 
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [filePath, setFilePath] = useState(null);
 
   // console.log(myAssignment);
 
@@ -29,43 +29,50 @@ const ViewAssignment = () => {
     e.preventDefault();
 
     const form = e.target;
-
     const notes = form.notes.value;
-
     const email = user.email;
-
-    const file = selectedFile;
-
     const status = 'Pending';
-
-
-    const takeAssInfo = {
-      notes, email, file , status
-      
-    }
-
-
-
-
-
+    
 
     const fileInput = document.getElementById('file');
+    const file = fileInput.files[0];
 
-        if (fileInput.files.length > 0) {
-            const file = fileInput.files[0];
+    if (file) {
+      const filePath = URL.createObjectURL(file);
+      
+      setFilePath(filePath);
 
-            setSelectedFile(file);
-        } else {
-            console.log('No file selected.');
-        }
+      console.log('File path:', filePath);
+    } else {
+      console.log('No file selected');
+    }
+
+    const takeAssInfo = {
+      notes, email, status, filePath
+    }
    
 
 
 
-    console.log( notes, email, file);
 
     if(user.email !== myAssignment.email){
-      console.log('operation on');
+      fetch('http://localhost:5000/takeAssignment',{
+        method: 'POST',
+        headers:{
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(takeAssInfo)
+      })
+      .then(res=> res.json())
+      .then(data =>{
+        console.log(data);
+        if(data.insertedId){
+          console.log('insert done');
+        }
+      })
+      .catch(error =>{
+        console.log(error);
+      })
     }else{
       console.log('off');
     }

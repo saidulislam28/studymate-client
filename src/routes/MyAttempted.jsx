@@ -1,15 +1,31 @@
+import { useLoaderData } from "react-router-dom";
+import Assignments from "./Assignments";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import AttemptedCard from "../components/AttemptedCard";
+
 const MyAttempted = () => {
+const attemptedData = useLoaderData();
+const {user } = useContext(AuthContext);
+ 
+const myAttemptedData = attemptedData.filter(assignment => assignment?.email === user?.email );
+
+console.log(myAttemptedData);
+
+
+
+
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="card w-72 bg-base-100 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">assignment title</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
-      </div>
+    <div className="max-w-4xl my-10 mx-auto">
+
+      {
+        myAttemptedData.map(assignment => <AttemptedCard key={assignment._id}
+        assignment={assignment}
+        ></AttemptedCard> )
+      }
+
+
+     
     </div>
   );
 };

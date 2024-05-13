@@ -57,7 +57,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/attempted",
-        element: <MyAttempted></MyAttempted>
+        element: <MyAttempted></MyAttempted>,
+        loader: () => fetch('http://localhost:5000/takeAssignment')
       },
       {
         path: "/pending",
