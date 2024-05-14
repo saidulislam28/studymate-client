@@ -57,7 +57,7 @@ const CreateAssignment = () => {
     })
     
 
-
+event.target.reset();
 
     console.table(email,marks, title, thumbnailImageUrl, description, difficultyLevel, dueDate);
 

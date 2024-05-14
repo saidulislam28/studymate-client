@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import auth from "../../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
 import { signInWithPopup} from "firebase/auth";
+import { Fade } from "react-awesome-reveal";
 
 
 const Login = () => {
@@ -30,7 +31,7 @@ console.log(email, password);
 
 signIN(email, password)
 .then((result) =>{
-  toast.success('successfully logged in')
+  toast.success('Welcome back')
   navigate(location?.state ? location.state : "/");
   
 }).catch((error)=>{
@@ -58,7 +59,8 @@ signInWithPopup(auth, googleProvider)
 
 
   return (
-    <div className="flex justify-center">
+    <Fade duration={5000}>
+      <div className="flex justify-center">
       <div className="login-container">
     <div className="heading">Sign In</div>
     <form onSubmit={handleSignIN}  className="form-section">
@@ -94,6 +96,7 @@ signInWithPopup(auth, googleProvider)
       <p className="agreement">Do not  have an account? <Link to="/register" > <span className="underline">Register</span>  </Link>  </p>
   </div>
     </div>
+    </Fade>
   );
 };
 
