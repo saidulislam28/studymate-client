@@ -59,7 +59,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/attempted",
-        element: <MyAttempted></MyAttempted>,
+        element: <PrivateRoutes>
+          <MyAttempted></MyAttempted>
+        </PrivateRoutes>,
         loader: () => fetch('http://localhost:5000/takeAssignment')
       },
       {
@@ -72,10 +74,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateAssignments/:id",
-        element: <UpdateAssignments></UpdateAssignments>
+        element: <PrivateRoutes>
+          <UpdateAssignments></UpdateAssignments>
+        </PrivateRoutes>
       },{
         path:"/takeAssignment/:id",
-        element:<GiveMark></GiveMark>,
+        element:<PrivateRoutes>
+          <GiveMark></GiveMark>
+        </PrivateRoutes>,
         loader: () => fetch('http://localhost:5000/takeAssignment')
       }
     ]

@@ -31,6 +31,8 @@ console.log(email, password);
 signIN(email, password)
 .then((result) =>{
   toast.success('successfully logged in')
+  navigate(location?.state ? location.state : "/");
+  
 }).catch((error)=>{
   toast.error('something is going wrong')
 })
@@ -46,6 +48,7 @@ signInWithPopup(auth, googleProvider)
     
   setUser(result.user)
   toast.success('log in successfully')
+  navigate(location?.state ? location.state : "/");
 })
 .catch(error=> {
   toast.error('something is wrong')

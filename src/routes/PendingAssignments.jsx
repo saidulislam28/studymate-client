@@ -12,7 +12,7 @@ const PendingAssignments = () => {
   console.log(pendingData.length);
 
   return (
-    <div className="container mx-auto my-10 border">
+    <div className="container mx-auto my-10 border min-h-[500px]">
 
       <h1 className="font-bold text-4xl opacity-50 my-5 text-center">All the pending assignment is here </h1>
      <p className="text-end my-5 "><span className="bg-sky-200 px-2 py-1 rounded-xl mr-4">Pending assignment : {pendingData.length}</span></p>
