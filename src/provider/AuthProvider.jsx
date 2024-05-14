@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
+
 export const AuthContext = createContext(null)
 
 
@@ -9,6 +10,9 @@ const AuthProvider = ({children}) => {
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
+
+
 
 
   const signUp = (email, password) => {
@@ -28,6 +32,8 @@ const AuthProvider = ({children}) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email , password)
   }
+
+  
 
   const logOut = () => {
     setLoading(true)
@@ -56,6 +62,7 @@ signUp,
 updateProfileinfo,
 signIN,
 logOut
+
 }
 
 
