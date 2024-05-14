@@ -33,6 +33,8 @@ const GiveMark = () => {
         if (data.modifiedCount > 0) toast.success("Assignment marked");
       });
 
+      e.target.reset();
+
     console.table(givenMark, feedback, status);
   };
 
