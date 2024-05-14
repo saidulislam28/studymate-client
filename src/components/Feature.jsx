@@ -1,4 +1,4 @@
-
+import './cssFiles/feature.css'
 
 const Feature = () => {
   return (
@@ -42,7 +42,11 @@ const Feature = () => {
       </p>
     </div>
     <div className="grid gap-4 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      <div className="flex flex-col justify-between p-5 border rounded shadow-sm">
+
+
+
+
+      <div className="card-feature flex flex-col justify-between p-5 border rounded shadow-sm">
         <div>
           <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
             <svg
@@ -59,22 +63,25 @@ const Feature = () => {
               />
             </svg>
           </div>
-          <h6 className="mb-2 font-semibold leading-5">Interactive Assignments</h6>
-          <p className="mb-3 text-sm text-gray-400">
+          <h6 className="mb-2 font-semibold leading-5 text-white">Interactive Assignments</h6>
+          <p className="mb-3 text-sm text-white">
           Engage with dynamic assignments that encourage active participation and critical thinking.
           </p>
         </div>
         <a
           href="/"
           aria-label=""
-          className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          className="inline-flex items-center font-semibold transition-colors duration-200 text-white"
         >
           Learn more
         </a>
       </div>
-      <div className="flex flex-col justify-between p-5 border rounded shadow-sm">
+
+
+
+      <div className="card-feature  flex  flex-col justify-between p-5 border rounded shadow-sm">
         <div>
-          <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
+          <div className=" flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
             <svg
               className="w-12 h-12 text-deep-purple-accent-400"
               stroke="currentColor"
@@ -89,20 +96,22 @@ const Feature = () => {
               />
             </svg>
           </div>
-          <h6 className="mb-2 font-semibold leading-5">Assignment Submission</h6>
-          <p className="mb-3 text-sm text-gray-400">
+          <h6 className="mb-2 font-semibold leading-5 text-white">Assignment Submission</h6>
+          <p className="mb-3 text-sm text-white">
           Easily submit assignments online, including files and notes, with a simple and intuitive interface.
           </p>
         </div>
         <a
           href="/"
           aria-label=""
-          className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          className="inline-flex items-center font-semibold transition-colors duration-200 text-white"
         >
           Learn more
         </a>
       </div>
-      <div className="flex flex-col justify-between p-5 border rounded shadow-sm">
+
+
+      <div className="card-feature flex flex-col justify-between p-5 border rounded shadow-sm">
         <div>
           <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
             <svg
@@ -119,20 +128,22 @@ const Feature = () => {
               />
             </svg>
           </div>
-          <h6 className="mb-2 font-semibold leading-5">Mobile Compatibility</h6>
-          <p className="mb-3 text-sm text-gray-400">
+          <h6 className="mb-2 font-semibold leading-5 text-white">Mobile Compatibility</h6>
+          <p className="mb-3 text-sm text-white">
           Seamlessly access StudyMate on-the-go with our mobile-friendly platform, available on both iOS and Android devices.
           </p>
         </div>
         <a
           href="/"
           aria-label=""
-          className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          className="inline-flex items-center font-semibold transition-colors duration-200 text-white"
         >
           Learn more
         </a>
       </div>
-      <div className="flex flex-col justify-between p-5 border rounded shadow-sm">
+
+
+      <div className="card-feature flex flex-col justify-between p-5 border rounded shadow-sm">
         <div>
           <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
             <svg
@@ -149,15 +160,15 @@ const Feature = () => {
               />
             </svg>
           </div>
-          <h6 className="mb-2 font-semibold leading-5">Customizable Study Plans</h6>
-          <p className="mb-3 text-sm text-gray-400">
+          <h6 className="mb-2 font-semibold leading-5 text-white">Customizable Study Plans</h6>
+          <p className="mb-3 text-sm text-white">
           Create personalized study plans tailored to your learning style, goals, and schedule.
           </p>
         </div>
         <a
           href="/"
           aria-label=""
-          className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+          className="inline-flex items-center font-semibold transition-colors duration-200 text-white"
         >
           Learn more
         </a>

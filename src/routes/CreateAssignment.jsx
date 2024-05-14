@@ -102,7 +102,7 @@ const CreateAssignment = () => {
               name='title'
                 type="text"
                 placeholder="title"
-                className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
+                className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-200 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
               />
             </div>
 
@@ -114,7 +114,7 @@ const CreateAssignment = () => {
               name='thumbnailImageUrl'
                 type="text"
                 placeholder="URL"
-                className="p-2 w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
+                className="p-2 w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-200 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
               />
             </div>
 
@@ -126,7 +126,7 @@ const CreateAssignment = () => {
               name='description'
                 type="text"
                 placeholder="description"
-                className="p-2 w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
+                className="p-2 w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-200 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
               />
             </div>
             <div className="col-span-full sm:col-span-3">

@@ -27,7 +27,7 @@ const Assignments = () => {
 
   return (
     <div>
-      <div>
+      <div className="container mx-auto">
 
       <select
       onChange={handleDifficultyLevelChange}
@@ -40,7 +40,7 @@ const Assignments = () => {
               </select>
       </div>
 
-      <div className="container border mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
+      <div className="container border mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {filteredAssignments.map((assignment) => (
           <AssignmentCard
             key={assignment._id}

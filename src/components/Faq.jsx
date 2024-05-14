@@ -1,5 +1,7 @@
 
 const Faq = () => {
+
+  
   return (
     <div>
       <div className="border px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -49,16 +51,11 @@ const Faq = () => {
           <div className="space-y-8">
             <div>
               <p className="mb-4 text-xl font-medium">
-                The quick, brown fox jumps over a lazy dog?
+              How do I submit an assignment?
               </p>
               <p className="text-gray-700">
-                Space, the final frontier. These are the voyages of the Starship
-                Enterprise. Its five-year mission: to explore strange new
-                worlds.
-                <br />
-                <br />
-                Many say exploration is part of our destiny, but actually
-                our duty to future generations.
+              Provide step-by-step instructions on how users can submit their assignments, including any required file formats or submission guidelines.
+                
               </p>
             </div>
             <div>

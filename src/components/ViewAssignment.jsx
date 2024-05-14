@@ -13,6 +13,11 @@ const ViewAssignment = () => {
 
   const [filePath, setFilePath] = useState(null);
 
+  const titles = myAssignment.title;
+  const mark = myAssignment.marks;
+
+  // console.log(title, marks);
+
   // console.log(myAssignment);
 
   // const myAssignment = {
@@ -31,7 +36,13 @@ const ViewAssignment = () => {
     const form = e.target;
     const notes = form.notes.value;
     const email = user.email;
+    const name = user.displayName;
     const status = 'Pending';
+    const marks = mark;
+    const title = titles;
+
+
+
     
 
     const fileInput = document.getElementById('file');
@@ -48,7 +59,7 @@ const ViewAssignment = () => {
     }
 
     const takeAssInfo = {
-      notes, email, status, filePath
+      notes, email, status, filePath, marks , title , name
     }
    
 
@@ -141,6 +152,7 @@ const ViewAssignment = () => {
           </button>
           <dialog id="my_modal_1" className="modal">
             <div className="modal-box">
+              {/* cross button  */}
             <div className="flex justify-end">
                 <form method="dialog">
                  

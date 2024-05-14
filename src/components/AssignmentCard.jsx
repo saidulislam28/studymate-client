@@ -17,11 +17,8 @@ const AssignmentCard = ({ assignment }) => {
 
 
   const handleDelete = _id =>{
-
-
     if(user?.email === email){
       console.log('operation going on');
-
       Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -48,21 +45,9 @@ const AssignmentCard = ({ assignment }) => {
           })
         }
       })
-
-
-
-
     }else{
       console.log('not going on');
     }
-
-
-  
-
-
-
-
-
   }
 
 
@@ -74,7 +59,7 @@ const AssignmentCard = ({ assignment }) => {
 const formattedDueDate = new Date(dueDate).toLocaleDateString();
 
   return (
-    <div className="card ">
+    <div className="card">
       <img src={thumbnailImageUrl} alt="" />
       <div className="card__content">
         <p className="card__title">{title}</p>

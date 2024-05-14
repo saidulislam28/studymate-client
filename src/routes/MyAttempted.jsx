@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import Assignments from "./Assignments";
+
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import AttemptedCard from "../components/AttemptedCard";
@@ -16,7 +16,7 @@ console.log(myAttemptedData);
 
 
   return (
-    <div className="max-w-4xl my-10 mx-auto">
+    <div className="max-w-4xl my-10 mx-auto grid grid-cols-1 md: grid-cols-2 gap-5">
 
       {
         myAttemptedData.map(assignment => <AttemptedCard key={assignment._id}

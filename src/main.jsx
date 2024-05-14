@@ -17,6 +17,7 @@ import PendingAssignments from './routes/PendingAssignments';
 import PrivateRoutes from './MyPrivateRoutes/PrivateRoutes';
 import UpdateAssignments from './components/UpdateAssignments';
 import ViewAssignment from './components/ViewAssignment';
+import GiveMark from './components/GiveMark';
 
 
 
@@ -64,11 +65,17 @@ const router = createBrowserRouter([
         path: "/pending",
         element: <PrivateRoutes>
           <PendingAssignments></PendingAssignments>
-        </PrivateRoutes>
+        </PrivateRoutes>,
+        loader: () => fetch('http://localhost:5000/takeAssignment')
+        
       },
       {
         path: "/updateAssignments/:id",
         element: <UpdateAssignments></UpdateAssignments>
+      },{
+        path:"/takeAssignment/:id",
+        element:<GiveMark></GiveMark>,
+        loader: () => fetch('http://localhost:5000/takeAssignment')
       }
     ]
   },
