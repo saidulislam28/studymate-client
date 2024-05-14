@@ -1,6 +1,8 @@
 import  { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import {  toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -47,11 +49,11 @@ const CreateAssignment = () => {
     .then(data =>{
       console.log(data);
       if(data.insertedId){
-        console.log('insert done');
+        toast.success('you create a assignment successfully');
       }
     })
     .catch(error =>{
-      console.log(error);
+      toast.error('something is wrong');
     })
     
 
@@ -65,7 +67,16 @@ const CreateAssignment = () => {
 
 
   return (
-    <section className="p-6 bg-gray-500 dark:bg-gray-100 text-gray-50 dark:text-gray-900 container mx-auto">
+    <section className="p-6 bg-gray-500 dark:bg-gray-100 text-gray-50 dark:text-gray-900 container mx-auto my-10 border">
+
+      <h1 className='font-bold text-3xl text-center text-white my-6 font-thin'>Create your Own Assignment here</h1>
+
+      
+
+
+
+
+
       <form
       onSubmit={handleSubmitAssignment}
         className="container flex flex-col mx-auto space-y-12"
@@ -76,29 +87,29 @@ const CreateAssignment = () => {
               <label htmlFor="firstname" className="text-sm">
                 Email
               </label>
-              <input
+              <input required
                 name='email'
                 type="email"
                 placeholder="Email"
-                className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
+                className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-200 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
               />
             </div>
             <div className="col-span-full sm:col-span-3">
               <label htmlFor="firstname" className="text-sm">
                Marks
               </label>
-              <input
+              <input required
               name='marks'
                 type="text"
                 placeholder="Marks"
-                className="w-full p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-900 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
+                className="w-full  p-2 rounded-md focus:ring focus:ring-opacity-75 text-gray-200 dark:text-gray-50 focus:ring-violet-400 focus:dark:ring-violet-600 border-gray-700 dark:border-gray-300"
               />
             </div>
             <div className="col-span-full sm:col-span-3">
               <label htmlFor="lastname" className="text-sm">
                 Assignment Title
               </label>
-              <input
+              <input required
               name='title'
                 type="text"
                 placeholder="title"
@@ -110,7 +121,7 @@ const CreateAssignment = () => {
               <label htmlFor="email" className="text-sm">
                 Thumbnail Image URL
               </label>
-              <input
+              <input required
               name='thumbnailImageUrl'
                 type="text"
                 placeholder="URL"
@@ -122,7 +133,7 @@ const CreateAssignment = () => {
               <label htmlFor="address" className="text-sm">
                 Description
               </label>
-              <input
+              <input required
               name='description'
                 type="text"
                 placeholder="description"

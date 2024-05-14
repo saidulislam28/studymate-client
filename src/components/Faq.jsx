@@ -1,52 +1,27 @@
 
 const Faq = () => {
 
-  
+
   return (
     <div>
-      <div className="border px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="border my-10 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
         <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
           <div>
             <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-              Brand new
+              FAQ
             </p>
           </div>
           <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-            <span className="relative inline-block">
-              <svg
-                viewBox="0 0 52 24"
-                fill="currentColor"
-                className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-              >
-                <defs>
-                  <pattern
-                    id="70326c9b-4a0f-429b-9c76-792941e326d5"
-                    x="0"
-                    y="0"
-                    width=".135"
-                    height=".30"
-                  >
-                    <circle cx="1" cy="1" r=".7" />
-                  </pattern>
-                </defs>
-                <rect
-                  fill="url(#70326c9b-4a0f-429b-9c76-792941e326d5)"
-                  width="52"
-                  height="24"
-                />
-              </svg>
-              <span className="relative">The</span>
-            </span>{' '}
-            quick, brown fox jumps over a lazy dog
+           
+          Explore Common Queries About Assignments
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+          Our FAQ section is designed to provide clarity and assistance to ensure a smooth and hassle-free experience throughout your academic journey. 
           </p>
         </div>
       </div>
-      <div className="max-w-screen-xl sm:mx-auto">
+      <div className="max-w-screen-xl sm:mx-auto border p-5">
         <div className="grid grid-cols-1 gap-16 row-gap-8 lg:grid-cols-2">
           <div className="space-y-8">
             <div>
@@ -54,75 +29,55 @@ const Faq = () => {
               How do I submit an assignment?
               </p>
               <p className="text-gray-700">
-              Provide step-by-step instructions on how users can submit their assignments, including any required file formats or submission guidelines.
+              To submit an assignment, log in to your account and navigate to the assignment page. Click on the <span className="font-bold">Take Assignment</span> button and follow the instructions to upload your assignment file and provide any necessary notes. Once done, click the submit button.
                 
               </p>
             </div>
             <div>
               <p className="mb-4 text-xl font-medium">
-                The first mate and his Skipper too will do?
+              Can I edit my submitted assignment?
               </p>
               <p className="text-gray-700">
-                Well, the way they make shows is, they make one show. That
-                called a pilot.
-                <br />
-                <br />
-                Then they show that show to the people who make shows, and on
-                the strength of that one show they decide if going to
-                make more shows. Some pilots get picked and become television
-                programs.Some become nothing. She starred in one of the
-                ones that became nothing.
+              No, once an assignment is submitted, it cannot be edited. Make sure to review your assignment thoroughly before submission.
+                
               </p>
             </div>
             <div>
               <p className="mb-4 text-xl font-medium">
-                Is the Space Pope reptilian!?
+              How can I view my submitted assignments?
               </p>
               <p className="text-gray-700">
-                A flower in my garden, a mystery in my panties. Heart attack
-                never stopped old Big Bear. Ieven know we were calling
-                him Big Bear.
+              You can view your submitted assignments on your dashboard or profile page. They will be listed under the Submitted Assignments section.
               </p>
             </div>
           </div>
           <div className="space-y-8">
             <div>
               <p className="mb-4 text-xl font-medium">
-                How much money you got on you?
+              How will I know if my assignment has been graded?
               </p>
               <p className="text-gray-700">
-                The first mate and his Skipper too will do their very best to
-                make the others comfortable in their tropic island nest.
-                <br />
-                <br />
-                Michael Knight a young loner on a crusade to champion the cause
-                of the innocent. The helpless. The powerless in a world of
-                criminals who operate above the law. Here he comes Here comes
-                Speed Racer. a demon on wheels.
+              You will receive a notification via email or on the platform when your assignment has been graded. You can also check your dashboard for any updates on your submitted assignments.
+                
+                
               </p>
             </div>
             <div>
               <p className="mb-4 text-xl font-medium">
-                Galaxies  sword globular star cluster?
+              What should I do if I encounter technical difficulties while submitting my assignment?
               </p>
               <p className="text-gray-700">
-                A business big enough that it could be listed on the NASDAQ goes
-                belly up. Disappears!
-                <br />
-                <br />
-                It ceases to exist without me. No, you clearly  know who
-                talking to, so let me clue you in.
+              If you encounter any technical difficulties while submitting your assignment,<br />
+                <br /> please reach out to our support team for assistance. Provide as much detail as possible about the issue you are facing for a quicker resolution.
+                
               </p>
             </div>
             <div>
               <p className="mb-4 text-xl font-medium">
-                When has justice ever been as simple as a rule book?
+              Is there a deadline for submitting assignments?
               </p>
               <p className="text-gray-700">
-                This is not about revenge. This is about justice. A lot of
-                things can change in twelve years, Admiral. Well,
-                certainly good to know. About four years. I got tired of hearing
-                how young I looked.
+              Yes, each assignment has a specified deadline. Make sure to submit your assignment before the deadline to avoid any penalties.
               </p>
             </div>
           </div>

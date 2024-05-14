@@ -2,6 +2,8 @@ import { useLoaderData, useParams } from "react-router-dom";
 import "./cssFiles/button.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import {  toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const ViewAssignment = () => {
 
@@ -40,23 +42,15 @@ const ViewAssignment = () => {
     const status = 'Pending';
     const marks = mark;
     const title = titles;
+    const filePath = form.file.value;
+
+    console.log(filePath);
 
 
 
     
 
-    const fileInput = document.getElementById('file');
-    const file = fileInput.files[0];
-
-    if (file) {
-      const filePath = URL.createObjectURL(file);
-      
-      setFilePath(filePath);
-
-      console.log('File path:', filePath);
-    } else {
-      console.log('No file selected');
-    }
+   
 
     const takeAssInfo = {
       notes, email, status, filePath, marks , title , name
@@ -78,16 +72,16 @@ const ViewAssignment = () => {
       .then(data =>{
         console.log(data);
         if(data.insertedId){
-          console.log('insert done');
+         toast.success('submitted successfully');
         }
       })
       .catch(error =>{
-        console.log(error);
+        toast.error('something you did wrong')
       })
     }else{
-      console.log('off');
+      toast.error('you do not have the permission , try another one')
     }
-   
+   e.target.reset();
 
   }
 
@@ -166,11 +160,13 @@ const ViewAssignment = () => {
                   PDF
                 </label>
 
-                <input
+                {/* <input
                 id="file"
+                name="file"
                   type="file"
                   className="block w-full px-3 py-2 mt-2 text-sm text-gray-600 bg-white border border-gray-200 rounded-lg file:bg-gray-200 file:text-gray-700 file:text-sm file:px-4 file:py-1 file:border-none file:rounded-full dark:file:bg-gray-800 dark:file:text-gray-200 dark:text-gray-300 placeholder-gray-400/70 dark:placeholder-gray-500 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:focus:border-blue-300"
-                />
+                /> */}
+                <input name="file" type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" required />
               </div>
               <div>
                 <label className="block text-sm text-gray-500 dark:text-gray-300">
@@ -178,6 +174,8 @@ const ViewAssignment = () => {
                 </label>
 
                 <textarea
+
+                required
 
                 name="notes"
                   placeholder="text here"

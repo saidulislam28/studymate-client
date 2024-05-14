@@ -12,11 +12,14 @@ const AttemptedCard = ({assignment}) => {
        Marks : <span>{assignment.marks}</span>
       </p>
       <p>
-       Your obtained mark: <span></span>
+       Your obtained mark: {assignment.givenMark ? <span>{assignment.givenMark}</span> : ""}
       </p>
       <p>
-      Feedback: <span></span>
+      Feedback: <span>{assignment.givenMark ? <span>{assignment.feedback}</span> : ""}</span>
       </p>
+      {
+        assignment.status == "complete"? <h5 className="mt-10 font-bold text-green-500 text-center">Assignment Marked</h5> : "" 
+      }
     </div>
   </div>
   );

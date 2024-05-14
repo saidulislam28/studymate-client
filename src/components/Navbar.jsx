@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import "./cssFiles/navbar.css";
 import { AuthContext } from "../provider/AuthProvider";
+import {  toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -75,7 +77,7 @@ const Navbar = () => {
     </>
   );
   const handleLogOut = () => {
-    logOut().then().catch();
+    logOut().then(toast.success('logged out')).catch();
   };
 
   return (
@@ -106,7 +108,7 @@ const Navbar = () => {
           </ul>
         </div>
         <a className="animate__animated  animate__headShake">
-          <span className="text-lg md:text-2xl lg:text-4xl font-extrabold bg-gradient-to-r from-slate-700 via-blue-slate to-slate-200 text-transparent bg-clip-text animate-gradient bg-300%">
+          <span className="text-lg md:text-2xl lg:text-4xl font-extrabold bg-gradient-to-r from-sky-700 via-blue-slate to-slate-200 text-transparent bg-clip-text animate-gradient bg-300%">
             StudyMate
           </span>
         </a>

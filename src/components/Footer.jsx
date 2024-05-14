@@ -41,12 +41,14 @@ export const Footer = () => {
             </a>
             <div className="mt-4 lg:max-w-sm">
               <p className="text-sm text-deep-purple-50">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam.
+              Our commitment is to empower and facilitate your learning journey. With a dedicated team and a comprehensive platform, we strive to provide you with the tools and resources you need to succeed.
               </p>
               <p className="mt-4 text-sm text-deep-purple-50">
-                Eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                beatae vitae dicta sunt explicabo.
+              From collaborative study sessions to personalized assignment assistance, we are here to support you every step of the way. Join our community today and unlock the potential for academic excellence.
+
+
+
+
               </p>
             </div>
           </div>
@@ -92,7 +94,7 @@ export const Footer = () => {
             </div>
             <div>
               <p className="font-semibold tracking-wide text-teal-accent-400">
-                Cherry
+               Platforms
               </p>
               <ul className="mt-2 space-y-2">
                 <li>
@@ -139,7 +141,7 @@ export const Footer = () => {
             </div>
             <div>
               <p className="font-semibold tracking-wide text-teal-accent-400">
-                Apples
+               Partners
               </p>
               <ul className="mt-2 space-y-2">
                 <li>
@@ -226,8 +228,8 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col justify-between pt-5 pb-10 border-t border-deep-purple-accent-200 sm:flex-row">
-          <p className="text-sm text-gray-100">
-            © Copyright 2020 Lorem Inc. All rights reserved.
+          <p className="text-sm text-gray-500">
+            © Copyright 2020 StudyMate ltd. All rights reserved.
           </p>
           <div className="flex items-center mt-4 space-x-4 sm:mt-0">
             <a

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {  toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateAssignments = () => {
   const { id } = useParams();
@@ -52,7 +54,9 @@ const UpdateAssignments = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount > 0) console.log("update successful");
+        if (data.modifiedCount > 0){
+          toast.success('updated successful')
+        }
       });
 
     console.log(

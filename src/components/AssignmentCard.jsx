@@ -3,6 +3,8 @@ import "./cssFiles/card.css";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import {  toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -46,7 +48,7 @@ const AssignmentCard = ({ assignment }) => {
         }
       })
     }else{
-      console.log('not going on');
+      toast.error('you do not have the permission or something wrong')
     }
   }
 

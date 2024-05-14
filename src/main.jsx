@@ -18,6 +18,7 @@ import PrivateRoutes from './MyPrivateRoutes/PrivateRoutes';
 import UpdateAssignments from './components/UpdateAssignments';
 import ViewAssignment from './components/ViewAssignment';
 import GiveMark from './components/GiveMark';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -85,6 +86,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <AuthProvider>
       <RouterProvider router={router} />
+      <ToastContainer />
       </AuthProvider>
   </React.StrictMode>,
 )

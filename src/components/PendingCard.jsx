@@ -14,7 +14,7 @@ const PendingCard = ({pending}) => {
   <h2 className="card-title text-2xl underline">{pending.title}</h2>
     
     <p className="font-semibold">
-     Status : <span className="">{pending.name}</span>
+    Name : <span className="">{pending.name}</span>
     </p>
     <p className="font-semibold">
      Status : <span>{pending.status}</span>

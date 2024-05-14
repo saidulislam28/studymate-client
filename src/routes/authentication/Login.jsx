@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./styles/login.css";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import {  toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
@@ -18,10 +20,9 @@ console.log(email, password);
 
 signIN(email, password)
 .then((result) =>{
-  console.log(result.user)
-  alert('successful')
+  toast.success('successfully logged in')
 }).catch((error)=>{
-  console.log(error);
+  toast.error('something is going wrong')
 })
 
 e.target.reset()

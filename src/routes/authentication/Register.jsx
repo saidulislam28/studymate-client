@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import "./styles/login.css";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-
+import {  toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
 
 const {signUp, updateProfileinfo} = useContext(AuthContext);
@@ -24,14 +25,14 @@ const {signUp, updateProfileinfo} = useContext(AuthContext);
       console.log(result.user);
       
       updateProfileinfo(name, photo)
-      .then(alert('succsful'))
+      .then(toast.success('succcessfully registered'))
       .catch(error => {
-        console.log(error);
+       toast.error('something went wrong')
       })
 
     })
     .catch(err =>{
-      console.log(err);
+      toast.error("something went wrong")
     })
     console.log(name, email, typeof(password), photo);
     e.target.reset();
