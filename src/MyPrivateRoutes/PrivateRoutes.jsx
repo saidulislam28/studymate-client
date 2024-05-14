@@ -13,10 +13,10 @@ const PrivateRoutes = ({children}) => {
   const {user,loading} = useContext(AuthContext);
 
   if(loading){
-    return <div className="text-center">
-      <span className="loading loading-spinner loading-lg "></span>;
-      
-    </div>
+    return <div className="text-center my-20">
+    <span className="loading loading-spinner loading-lg "></span>;
+    
+  </div>
   }
 
   if(user){

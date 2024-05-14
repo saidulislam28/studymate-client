@@ -1,41 +1,51 @@
+import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import {  toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../provider/AuthProvider";
 
 const GiveMark = () => {
   const assignment = useLoaderData();
+
+  const {user} = useContext(AuthContext);
 
   const { id } = useParams();
   const myAssignment = assignment.find((data) => data._id === id);
 
   const handleGiveMark = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const givenMark = form.givenMark.value;
-    const feedback = form.feedback.value;
-    const status = "complete";
 
-    const givemarkFeedback = {
-      givenMark,
-      feedback,
-      status,
-    };
-
-    fetch(`http://localhost:5000/takeAssignment/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(givemarkFeedback),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount > 0) toast.success("Assignment marked");
-      });
+    if(user?.email !== myAssignment?.email){
+      const form = e.target;
+      const givenMark = form.givenMark.value;
+      const feedback = form.feedback.value;
+      const status = "complete";
+  
+      const givemarkFeedback = {
+        givenMark,
+        feedback,
+        status,
+      };
+  
+      fetch(`http://localhost:5000/takeAssignment/${id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(givemarkFeedback),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.modifiedCount > 0) toast.success("Assignment marked");
+        });
+    }else{
+      toast.error('You did not have the permission')
+    }
+   
 
       e.target.reset();
 
-    console.table(givenMark, feedback, status);
+    // console.table(givenMark, feedback, status);
   };
 
   return (
