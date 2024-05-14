@@ -4,9 +4,14 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import {  toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+
+  const uppercaseRegex = /[A-Z]/;
+  const lowercaseRegex = /[a-z]/;
+
+
 const Register = () => {
 
-const {signUp, updateProfileinfo} = useContext(AuthContext);
+const {signUp,setUser, updateProfileinfo} = useContext(AuthContext);
 
 
     const handleSignUp = e =>{
@@ -17,22 +22,46 @@ const {signUp, updateProfileinfo} = useContext(AuthContext);
     const email = form.get('email');
     const password = form.get('password');
     const photo = form.get('photo');
+
+
+    if(password.length <8){
+      return toast.error('Password must be at least 6 characters long.')
+     ;
+  
+    }
+
+    
+    if(!uppercaseRegex.test(password)){
+      return toast.error('Password must contain at least one uppercase letter.')
+      
+    }
+    if(!lowercaseRegex.test(password)){
+      return toast.error('Password must contain at least one lowercase letter.')
+     
+    }
+
+
+
+
+
     console.log(name, email, password, photo);
 
 
     signUp(email, password)
     .then(result =>{
-      console.log(result.user);
+      toast.success('succcessfully registered')
       
       updateProfileinfo(name, photo)
-      .then(toast.success('succcessfully registered'))
+      .then()
       .catch(error => {
        toast.error('something went wrong')
+       console.log(error);
       })
 
     })
     .catch(err =>{
       toast.error("something went wrong")
+      console.log(err);
     })
     console.log(name, email, typeof(password), photo);
     e.target.reset();

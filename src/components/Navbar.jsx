@@ -162,11 +162,11 @@ const Navbar = () => {
         ) : (
           <div className="flex items-center gap-2">
             <Link to="/register">
-              <p className="btn bg-[#80669d] text-white">Register</p>
+              <p className="btn bg-[#4c88b6] text-white">Register</p>
             </Link>
 
             <Link to="/login">
-              <p className="btn text-white  bg-[#dd7973]">Login</p>
+              <p className="btn text-black  bg-[#dce86f]">Login</p>
             </Link>
           </div>
         )}
