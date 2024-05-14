@@ -32,18 +32,18 @@ const Banner = () => {
             </span>
           </h2>
           <p className="pr-5 mb-5 md:text-lg opacity-50">
-          Welcome to StudyMate, your ultimate destination for collaborative learning! Join hands with friends, dive into engaging assignments, and unleash your potential together. Let's make learning an adventure!
+          Welcome to StudyMate, your ultimate destination for collaborative learning! Join hands with friends, dive into engaging assignments, and unleash your potential together. Lets make learning an adventure!
           </p>
           <div className="flex items-center">
             <p
-              className="inline-flex items-center btn  bg-gray-400 text-white justify-center h-12 px-6 mr-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+              className="inline-flex items-center btn  bg-gray-400 text-white justify-center h-12 px-6 mr-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
             >
               Get started
             </p>
             <a
               href="/"
               aria-label=""
-              className="inline-flex items-center btn  bg-gray-400 text-white font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
+              className="inline-flex items-center btn  bg-gray-400 text-white font-semibold transition-colors duration-200 hover:text-deep-purple-accent-700"
             >
               Learn more
             </a>

@@ -32,9 +32,11 @@ console.log(email, password);
 signIN(email, password)
 .then((result) =>{
   toast.success('Welcome back')
+  console.log(result);
   navigate(location?.state ? location.state : "/");
   
 }).catch((error)=>{
+  console.log(error);
   toast.error('something is going wrong')
 })
 

@@ -11,7 +11,7 @@ import {  toast } from 'react-toastify';
 
 const Register = () => {
 
-const {signUp,setUser, updateProfileinfo} = useContext(AuthContext);
+const {signUp, updateProfileinfo} = useContext(AuthContext);
 
 
     const handleSignUp = e =>{
@@ -50,6 +50,7 @@ const {signUp,setUser, updateProfileinfo} = useContext(AuthContext);
     signUp(email, password)
     .then(result =>{
       toast.success('succcessfully registered')
+      console.log(result.user);
       
       updateProfileinfo(name, photo)
       .then()

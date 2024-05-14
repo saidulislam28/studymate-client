@@ -53,6 +53,7 @@ const CreateAssignment = () => {
       }
     })
     .catch(error =>{
+      console.log(error);
       toast.error('something is wrong');
     })
     

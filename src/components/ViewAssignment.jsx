@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import "./cssFiles/button.css";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import {  toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
@@ -13,7 +13,7 @@ const ViewAssignment = () => {
 
   const myAssignment = assignment.find((assignment) => assignment._id === id);
 
-  const [filePath, setFilePath] = useState(null);
+ 
 
   const titles = myAssignment.title;
   const mark = myAssignment.marks;
@@ -77,6 +77,7 @@ const ViewAssignment = () => {
       })
       .catch(error =>{
         toast.error('something you did wrong')
+        console.log(error);
       })
     }else{
       toast.error('you do not have the permission , try another one')
