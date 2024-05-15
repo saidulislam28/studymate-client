@@ -113,7 +113,7 @@ const ViewAssignment = () => {
         <div className="mt-4">
           <div className="flex flex-col items-start">
             <div className="flex  items-center">
-              <p>
+              <p className="text-gray-600 dark:text-gray-300">
                 Remaining Date:{" "}
                 <span className="mx-1 text-s text-gray-600 dark:text-gray-300">
                   {" "}
@@ -121,14 +121,14 @@ const ViewAssignment = () => {
                 </span>{" "}
               </p>
             </div>
-            <p>
+            <p className="text-gray-600 dark:text-gray-300">
               Difficulty:{" "}
               <span className="mx-1 text-s text-gray-600 dark:text-gray-300">
                 {" "}
                 {myAssignment.difficultyLevel}
               </span>{" "}
             </p>
-            <p>
+            <p className="text-gray-600 dark:text-gray-300">
               Marks:{" "}
               <span className="mx-1 text-s text-gray-600 dark:text-gray-300">
                 {" "}
