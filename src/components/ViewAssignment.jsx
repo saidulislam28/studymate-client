@@ -61,7 +61,7 @@ const ViewAssignment = () => {
 
 
     if(user.email !== myAssignment.email){
-      fetch('http://localhost:5000/takeAssignment',{
+      fetch('https://study-mate-server-eight.vercel.app/takeAssignment',{
         method: 'POST',
         headers:{
           'content-type': 'application/json'

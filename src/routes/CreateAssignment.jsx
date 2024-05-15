@@ -38,7 +38,7 @@ const CreateAssignment = () => {
       dueDate
     }
 
-    fetch('http://localhost:5000/assignments',{
+    fetch('https://study-mate-server-eight.vercel.app/assignments',{
       method: 'POST',
       headers:{
         'content-type': 'application/json'

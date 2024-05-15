@@ -9,7 +9,7 @@ const PendingCard = ({pending}) => {
 
 
 
-  return ( <div className="shadow-2xl  flex justify-center items-start border w-72 bg-base-100 flex-grow">
+  return ( <div className="shadow-2xl  flex justify-center items-start border w-full lg:w-72 bg-base-100 flex-grow">
   <div className="card-body">
   <h2 className="card-title text-2xl underline">{pending.title}</h2>
     

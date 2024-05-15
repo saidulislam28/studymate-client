@@ -15,7 +15,7 @@ const AssignmentCard = ({ assignment }) => {
 
   const {_id, email, title, description, marks, thumbnailImageUrl, difficultyLevel, dueDate} = assignment;
 
-  // console.log(user?.email, email);
+  // (user?.email, email);
 
 
   const handleDelete = _id =>{
@@ -31,7 +31,7 @@ const AssignmentCard = ({ assignment }) => {
         confirmButtonText: "Yes, delete it!",
       }).then((result)=>{
         if(result.isConfirmed){
-          fetch(`http://localhost:5000/assignments/${_id}`, {
+          fetch(`https://study-mate-server-eight.vercel.app/assignments/${_id}`, {
             method: "DELETE",
           })
           .then(res => res.json())

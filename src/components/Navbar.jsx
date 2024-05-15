@@ -120,7 +120,7 @@ const Navbar = () => {
         {user ? (
           <div className="flex items-center gap-2">
             <details className="dropdown">
-              <summary className=" btn btn-ghost   btn-circle rounded-full mt-2">
+              <summary className=" btn btn-ghost mr-10 lg:mr-2  btn-circle rounded-full mt-2">
             <div
               tabIndex={0}
               role="button"
@@ -131,7 +131,7 @@ const Navbar = () => {
                 <img alt={user.displayName} src={user.photoURL} />
               </div>
             </div></summary>
-              <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box ">
+              <ul className=" shadow menu dropdown-content z-[1] bg-base-100 rounded-box ">
                 <li className="font-semibold">
                   <Link to="attempted">
                   <p className="text-start">
@@ -150,14 +150,7 @@ const Navbar = () => {
             </details>
 
 
-            {/* <div className="relative overflow-hidden  rounded-xl">
-              <button
-                onClick={handleLogOut}
-                className="btn overflow-hidden relative  bg-[#98daf0] text-black rounded-xl font-bold uppercase -- before:block before:absolute before:h-full before:w-1/2 before:rounded-full before:bg-[#f3b200] before:top-0 before:left-1/4 before:transition-transform before:opacity-0 before:hover:opacity-100 hover:text-black hover:before:animate-ping transition-all duration-300"
-              >
-                <span className="relative">Log Out</span>
-              </button>
-            </div> */}
+            
           </div>
         ) : (
           <div className="flex items-center gap-2">

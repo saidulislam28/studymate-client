@@ -6,7 +6,7 @@ const Assignments = () => {
   const [selectedDifficultyLevel, setSelectedDifficultyLevel] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/assignments")
+    fetch("https://study-mate-server-eight.vercel.app/assignments")
       .then((res) => res.json())
       .then((data) => {
         setAssignments(data);

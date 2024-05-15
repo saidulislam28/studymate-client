@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         element:<PrivateRoutes>
           <ViewAssignment></ViewAssignment>
         </PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/assignments/')
+        loader: () => fetch('https://study-mate-server-eight.vercel.app/assignments/')
 
       },
       {
@@ -62,14 +62,14 @@ const router = createBrowserRouter([
         element: <PrivateRoutes>
           <MyAttempted></MyAttempted>
         </PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/takeAssignment')
+        loader: () => fetch('https://study-mate-server-eight.vercel.app/takeAssignment')
       },
       {
         path: "/pending",
         element: <PrivateRoutes>
           <PendingAssignments></PendingAssignments>
         </PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/takeAssignment')
+        loader: () => fetch('https://study-mate-server-eight.vercel.app/takeAssignment')
         
       },
       {
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
         element:<PrivateRoutes>
           <GiveMark></GiveMark>
         </PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/takeAssignment')
+        loader: () => fetch('https://study-mate-server-eight.vercel.app/takeAssignment')
       }
     ]
   },

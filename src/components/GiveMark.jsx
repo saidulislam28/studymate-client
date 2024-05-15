@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import {  toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-import { AuthContext } from "../provider/AuthProvider";
+
 
 const GiveMark = () => {
   const assignment = useLoaderData();
 
-  const {user} = useContext(AuthContext);
+const navigate = useNavigate();
 
   const { id } = useParams();
   const myAssignment = assignment.find((data) => data._id === id);
@@ -15,7 +14,7 @@ const GiveMark = () => {
   const handleGiveMark = (e) => {
     e.preventDefault();
 
-    if(user?.email !== myAssignment?.email){
+    
       const form = e.target;
       const givenMark = form.givenMark.value;
       const feedback = form.feedback.value;
@@ -27,7 +26,7 @@ const GiveMark = () => {
         status,
       };
   
-      fetch(`http://localhost:5000/takeAssignment/${id}`, {
+      fetch(`https://study-mate-server-eight.vercel.app/takeAssignment/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -37,10 +36,9 @@ const GiveMark = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.modifiedCount > 0) toast.success("Assignment marked");
+          navigate('/pending')
         });
-    }else{
-      toast.error('You did not have the permission')
-    }
+    
    
 
       e.target.reset();

@@ -19,7 +19,7 @@ const UpdateAssignments = () => {
   } = assignment;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/updateAssignments/${id}`)
+    fetch(`https://study-mate-server-eight.vercel.app/updateAssignments/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setAssignment(data);
@@ -45,7 +45,7 @@ const UpdateAssignments = () => {
       dueDate,
     };
 
-    fetch(`http://localhost:5000/updateAssignments/${id}`, {
+    fetch(`https://study-mate-server-eight.vercel.app/updateAssignments/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
