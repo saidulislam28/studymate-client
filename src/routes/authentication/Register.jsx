@@ -3,7 +3,7 @@ import "./styles/login.css";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import {  toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
   const uppercaseRegex = /[A-Z]/;
   const lowercaseRegex = /[a-z]/;

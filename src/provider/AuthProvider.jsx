@@ -1,50 +1,42 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword,  signOut,  updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
+export const AuthContext = createContext(null);
 
-export const AuthContext = createContext(null)
-
-
-const AuthProvider = ({children}) => {
-
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
-
-
-
   const signUp = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-   return createUserWithEmailAndPassword(auth, email, password)
-
-  }
-
-  const updateProfileinfo = (name, photo) =>{
-    return  updateProfile(auth.currentUser, {
+  const updateProfileinfo = (name, photo) => {
+    return updateProfile(auth.currentUser, {
       displayName: name,
-      photoURL: photo
-    })
-  }
+      photoURL: photo,
+    });
+  };
 
-  const signIN = (email, password) =>{
+  const signIN = (email, password) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth, email , password)
-  }
-
-  
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   const logOut = () => {
-    setLoading(true)
+    setLoading(true);
     return signOut(auth);
-  }
-
-
+  };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      
       setUser(currentUser);
       setLoading(false);
     });
@@ -53,24 +45,18 @@ const AuthProvider = ({children}) => {
     };
   }, []);
 
-
-const sharedInfo = {
-  user,
-  setUser,
-  loading,
-signUp,
-updateProfileinfo,
-signIN,
-logOut
-
-}
-
-
+  const sharedInfo = {
+    user,
+    setUser,
+    loading,
+    signUp,
+    updateProfileinfo,
+    signIN,
+    logOut,
+  };
 
   return (
-   <AuthContext.Provider value={sharedInfo}>
-    {children}
-   </AuthContext.Provider>
+    <AuthContext.Provider value={sharedInfo}>{children}</AuthContext.Provider>
   );
 };
 
